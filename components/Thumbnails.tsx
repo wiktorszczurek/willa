@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image"; // Ensure Image is imported
 
 type ThumbnailProps = {
-  href: string;
   img: string;
   label: string;
   caption: string;
@@ -14,16 +14,19 @@ type ThumbnailsProps = {
 };
 
 const Thumbnail: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
-  const refs = useRef<Array<React.RefObject<HTMLAnchorElement>>>(
-    thumbnails.map(() => React.createRef<HTMLAnchorElement>())
+  const refs = useRef<Array<React.RefObject<HTMLDivElement>>>(
+    thumbnails.map(() => React.createRef<HTMLDivElement>())
   );
 
   useEffect(() => {
     refs.current.forEach((ref, index) => {
       if (ref.current) {
         setTimeout(() => {
-          ref.current!.style.opacity = "1";
-          ref.current!.classList.add("thumbnail-enter");
+          // Add an additional check here
+          if (ref.current) {
+            ref.current.style.opacity = "1";
+            ref.current.classList.add("thumbnail-enter");
+          }
         }, index * 250);
       }
     });
@@ -44,9 +47,8 @@ const Thumbnail: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
       }}
     >
       {thumbnails.map((thumbnail, index) => (
-        <a
+        <div
           key={index}
-          href={thumbnail.href}
           ref={refs.current[index]}
           className="thumbnail-link font-josefin"
           style={{
@@ -65,21 +67,15 @@ const Thumbnail: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
             borderRadius: "9px",
           }}
         >
-          <img
-            src={thumbnail.img}
-            alt={thumbnail.label}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              position: "absolute",
-              transition: "transform 0.6s ease",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.2)")
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          />
+          <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+            <Image
+              src={thumbnail.img}
+              alt={thumbnail.label}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-300 hover:scale-120"
+            />
+          </div>
           <div
             className="thumbnail-overlay"
             style={{
@@ -110,7 +106,7 @@ const Thumbnail: React.FC<ThumbnailsProps> = ({ thumbnails }) => {
               {thumbnail.caption}
             </p>
           </div>
-        </a>
+        </div>
       ))}
     </div>
   );

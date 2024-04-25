@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -37,15 +36,12 @@ const MenuModal: React.FC<MenuModalProps> = ({
           className="flex justify-center items-center overflow-hidden"
           style={{ minHeight: "80vh" }}
         >
-          <img
+          {/* Replace img with Image component for the main image */}
+          <Image
             src={image}
             alt="Menu"
-            style={{
-              maxHeight: "78vh",
-              objectFit: "contain",
-              width: "auto",
-              height: "auto",
-            }}
+            layout="fill" // Using "fill" layout to make the image responsive within its parent container
+            objectFit="contain" // Keeps the image's aspect ratio within the bounds of the element
           />
         </div>
       </div>
@@ -57,16 +53,23 @@ const MenuModal: React.FC<MenuModalProps> = ({
       </button>
       <div className="flex overflow-x-auto py-2">
         {images.map((img, index) => (
-          <img
+          <div
             key={index}
-            src={img}
-            alt={`Thumbnail ${index}`}
-            className={`cursor-pointer m-1 ${
-              image === img ? "opacity-80 border-2 border-white" : ""
-            }`}
+            className="cursor-pointer m-1"
             onClick={() => onImageSelect(index)}
-            style={{ width: "80px", height: "120px", objectFit: "cover" }}
-          />
+          >
+            {/* Replace img with Image component for thumbnails */}
+            <Image
+              src={img}
+              alt={`Thumbnail ${index}`}
+              width={80}
+              height={120}
+              objectFit="cover"
+              className={`${
+                image === img ? "opacity-80 border-2 border-white" : ""
+              }`}
+            />
+          </div>
         ))}
       </div>
       <button

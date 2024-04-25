@@ -10,21 +10,21 @@ import {
 interface CarouselProps {
   images: string[];
 }
-
+import Image from "next/image";
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [activeImage, setActiveImage] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const resetInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-    intervalRef.current = setInterval(() => {
-      setActiveImage((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-  };
-
   useEffect(() => {
+    const resetInterval = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      intervalRef.current = setInterval(() => {
+        setActiveImage((prevIndex) => (prevIndex + 1) % images.length);
+      }, 5000);
+    };
+
     resetInterval();
 
     return () => {
@@ -56,15 +56,20 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   return (
     <div className="carousel-container w-full" style={{ height: "60vh" }}>
       {images.map((image, index) => (
-        <img
+        <div
           key={index}
-          src={image}
-          alt={`Slideshow image ${index + 1}`}
-          className={`w-full h-full object-cover transition-opacity duration-100 ${
-            index === activeImage ? "opacity-100" : "opacity-0"
+          className={`w-full h-full object-cover ${
+            index === activeImage ? "image-enter-active" : "image-exit-active"
           }`}
           style={{ position: "absolute" }}
-        />
+        >
+          <Image
+            src={image}
+            alt={`Slideshow image ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       ))}
       <div className="carousel-controls">
         <button

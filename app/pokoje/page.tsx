@@ -42,7 +42,8 @@ const images = [
 
 const thumbnails = [
   {
-    img: "/img-pokoje/Komfort.jpg",
+    img: "/img-pokoje/komfort.jpg",
+    href: "/#",
     label: "POKÓJ KOMFORT",
     caption: "ZOBACZ WIĘCEJ",
     text: `Pokój dwuosobowy, trzyosobowy lub czteroosobowy. Łazienki w pokojach wyposażone są w kabiny prysznicowe, 
@@ -68,7 +69,8 @@ const thumbnails = [
     ],
   },
   {
-    img: "/img-pokoje/standard.jpeg",
+    img: "/img-pokoje/standard.jpg",
+    href: "/#",
     label: "POKÓJ STANDARD",
     caption: "ZOBACZ WIĘCEJ",
     text: `Pokój dwuosobowy lub czteroosobowy. Łazienki w pokojach wyposażone są w kabiny prysznicowe, suszarki 
@@ -95,7 +97,8 @@ const thumbnails = [
     ],
   },
   {
-    img: "/img-pokoje/ekonomiczny.jpeg",
+    img: "/img-pokoje/ekonomiczny.jpg",
+    href: "/#",
     label: "POKÓJ EKONOMICZNY",
     caption: "ZOBACZ WIĘCEJ",
     text: `Pokój dwuosobowy. Łazienki w pokojach wyposażone są w kabiny prysznicowe, suszarki do
@@ -119,7 +122,8 @@ const thumbnails = [
     ],
   },
   {
-    img: "/img-pokoje/rodzinny.jpeg",
+    img: "/img-pokoje/rodzinny.jpg",
+    href: "/#",
     label: "POKÓJ RODZINNY",
     caption: "ZOBACZ WIĘCEJ",
     text: `Pokój czteroosobowy lub pięcioosobowy. Łazienki w pokojach wyposażone są w

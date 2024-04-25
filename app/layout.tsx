@@ -4,6 +4,8 @@ import "./globals.css";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollTopArrow from "@/components/ScrollTopArrow";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
@@ -30,6 +32,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <TopBar />
         <Header />
+        <ScrollTopArrow />
         {children}
         <Footer />
       </body>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const TripleSection = () => {
   return (
@@ -8,9 +9,11 @@ const TripleSection = () => {
       <div className="flex flex-col md:flex-row justify-between items-stretch border-customBlue">
         {/* Pierwsza sekcja */}
         <div className="flex flex-col items-center justify-center flex-1 p-10 border-b md:border-b-0 md:border-r border-customBlue">
-          <img
+          <Image
             src="/img-restauracja/1.png"
             alt="Restauracja Willi Poprad - dania"
+            width={500}
+            height={300}
             className="w-1/2 mb-4 mx-auto"
           />
           Szef Kuchni serwuje autorskie dania w niebanalnym połączeniu produktów
@@ -20,9 +23,11 @@ const TripleSection = () => {
 
         {/* Druga sekcja */}
         <div className="flex flex-col items-center justify-center flex-1 p-10 border-b md:border-b-0 md:border-r border-customBlue ">
-          <img
+          <Image
             src="/img-restauracja/2.png"
             alt="Restauracja Willi Poprad - wnętrze"
+            width={500}
+            height={300}
             className="w-1/2 mb-4 mx-auto"
           />
           Restauracja Willi Poprad zachwyca swym kameralnym wnętrzem i pysznym
@@ -36,9 +41,11 @@ const TripleSection = () => {
 
         {/* Trzecia sekcja */}
         <div className="flex flex-col items-center justify-center flex-1 p-10 ">
-          <img
+          <Image
             src="/img-restauracja/3.png"
             alt="Restauracja Willi Poprad - atmosfera"
+            width={500}
+            height={300}
             className="w-1/2 mb-4 mx-auto"
           />
           Celebracja cudownych chwil z najbliższymi – to zapewnia ta

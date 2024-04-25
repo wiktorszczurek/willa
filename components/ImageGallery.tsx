@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ImageGalleryModal from "@/components/ImageGalleryModal";
+import Image from "next/image";
 
 interface MenuImage {
   title: string;
@@ -58,9 +59,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ menuImages }) => {
           onClick={() => openModal(index)}
           style={{ height: "300px", overflow: "hidden" }}
         >
-          <img
+          <Image
             src={item.img}
             alt={item.title}
+            width={300}
+            height={300}
             className="cursor-pointer transition-transform duration-300 hover:scale-101 w-full h-full object-cover border border-gray-100"
           />
         </div>

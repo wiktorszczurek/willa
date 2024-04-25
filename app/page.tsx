@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "@/components/Carousel";
-import ThumbnailLinks from "@/components/Thumbnails";
+import ThumbnailLinks from "@/components/ThumbnailMainPage";
 const ScrollButton = dynamic(() => import("@/components/ScrollButton"), {
   ssr: false,
 });
@@ -10,7 +10,7 @@ import MenuHeader from "@/components/MenuHeader";
 import Photo from "@/components/Photo";
 
 const images = [
-  "/img-carousel/Carousel2.png",
+  "/img-carousel/Carousel2.jpg",
   "/img-carousel/Carousel4.jpg",
 
   "/img-carousel/Carousel6.jpg",

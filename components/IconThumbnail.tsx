@@ -1,5 +1,5 @@
-"use client";
 import React from "react";
+import Image from "next/image";
 
 interface IconThumbnailProps {
   src: string;
@@ -9,7 +9,13 @@ interface IconThumbnailProps {
 const IconThumbnail: React.FC<IconThumbnailProps> = ({ src, label }) => {
   return (
     <div className="flex flex-col items-center justify-center m-4 text-customYellow font-josefin font-normal">
-      <img src={src} alt={label} className="w-32 h-32 object-cover" />
+      <Image
+        src={src}
+        alt={label}
+        width={128}
+        height={128}
+        className="object-cover"
+      />
       <div className="text-sm text-center mt-2 w-full h-16 overflow-hidden">
         {label}
       </div>

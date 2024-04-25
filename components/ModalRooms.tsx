@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image"; // Make sure Image is imported
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -45,10 +46,10 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
       style={{ zIndex: "1000" }}
     >
       <div
-        className="bg-white p-5 rounded-lg w-full max-w-4xl space-y-4 relative transition-all duration-500 ease-out transform overflow-y-auto"
+        className="bg-white p-5 rounded-lg w-full max-w-4xl space-y-4 relative transition-all duration-1000 ease-out transform overflow-y-auto"
         style={{
           opacity: animation ? 1 : 0,
-          transform: `scale(${animation ? 1 : 0.95})`,
+          transform: `scale(${animation ? 1 : 0.9})`,
           maxHeight: "100vh",
         }}
       >
@@ -65,14 +66,18 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
           </h2>
         )}
         <div className="flex justify-center my-2">
-          <img
+          {/* Replace <img> with <Image> */}
+          <Image
             src={img}
             alt={label ?? ""}
             className="rounded-lg max-w-full h-auto"
-            style={{ maxHeight: "30vh" }}
+            layout="intrinsic" // Adjust layout as needed, could be 'responsive' or 'fixed'
+            width={500} // Adjust the width as needed
+            height={300} // Adjust the height as needed
+            objectFit="contain" // Adjust object-fit as needed
           />
         </div>
-        {text && <p className="text-center  text-base sm:text-sm">{text}</p>}
+        {text && <p className="text-center text-base sm:text-sm">{text}</p>}
         {descriptions && descriptions.length > 0 && (
           <div className="flex justify-center text-lg text-center sm:text-base">
             <ul>
@@ -86,9 +91,9 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
           {features.map((feature, index) => (
             <div
               key={index}
-              className="feature-icon flex flex-col items-center text-center" // Dodano klasę 'feature-icon'
+              className="feature-icon flex flex-col items-center text-center"
               style={{
-                animation: `fadeInUp 1s ease forwards ${index * 150}ms`,
+                animation: `fadeInUp 1s ease forwards ${index * 350}ms`,
                 width: "calc(33.333% - 1rem)",
               }}
             >

@@ -140,7 +140,6 @@ const galleryImages = [
 
   { img: "/img-wesela/WeselaGaleria9.jpg", title: "" },
 
-  { img: "/img-wesela/WeselaGaleria10.jpg", title: "" },
   { img: "/img-wesela/WeselaGaleria17.jpg", title: "" },
 
   { img: "/img-wesela/WeselaGaleria11.jpg", title: "" },

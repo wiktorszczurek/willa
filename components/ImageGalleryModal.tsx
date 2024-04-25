@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image"; // Ensure Image is imported
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -37,15 +38,13 @@ const MenuModal: React.FC<MenuModalProps> = ({
           className="flex justify-center items-center overflow-hidden"
           style={{ minHeight: "100vh" }}
         >
-          <img
+          {/* Replace <img> with <Image> */}
+          <Image
             src={image}
             alt="Menu"
-            style={{
-              maxHeight: "80vh",
-              objectFit: "contain",
-              width: "90%",
-              height: "auto",
-            }}
+            layout="fill" // Use "fill" to make the image responsive
+            objectFit="contain" // Keeps the aspect ratio of the image
+            quality={75} // Optional: Adjust quality of the image
           />
         </div>
       </div>
@@ -57,16 +56,22 @@ const MenuModal: React.FC<MenuModalProps> = ({
       </button>
       <div className="flex overflow-x-auto py-2">
         {images.map((img, index) => (
-          <img
+          <div
             key={index}
-            src={img}
-            alt={`Thumbnail ${index}`}
-            className={`cursor-pointer m-1 ${
-              image === img ? "opacity-80 border-2 border-white" : ""
-            }`}
+            className="cursor-pointer m-1"
             onClick={() => onImageSelect(index)}
-            style={{ width: "100px", height: "100px", objectFit: "cover" }}
-          />
+          >
+            <Image
+              src={img}
+              alt={`Thumbnail ${index}`}
+              width={100} // Specify width
+              height={100} // Specify height
+              objectFit="cover"
+              className={`${
+                image === img ? "opacity-80 border-2 border-white" : ""
+              }`}
+            />
+          </div>
         ))}
       </div>
       <button

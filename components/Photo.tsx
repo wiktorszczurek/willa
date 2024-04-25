@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import Image from "next/image"; // Importing Next.js Image component
 
 interface PhotoProps {
   src: string;
@@ -47,17 +49,22 @@ const Photo: React.FC<PhotoProps> = ({ src, captionSrc }) => {
           zIndex: 1,
         }}
       ></div>
-      {/* Caption image */}
-      <img
-        src={captionSrc}
-        alt="Caption"
+      {/* Caption image using Next.js Image component */}
+      <div
         style={{
-          zIndex: 2,
-          maxWidth: "80%",
-          maxHeight: "80%",
           position: "relative",
+          zIndex: 2,
+          width: "80%", // Width for Image container
+          height: "80%", // Height for Image container
         }}
-      />
+      >
+        <Image
+          src={captionSrc}
+          alt="Caption"
+          layout="fill" // Makes the Image component fill the parent container
+          objectFit="contain" // Similar to css's max-width/max-height but for Next.js Image
+        />
+      </div>
     </div>
   );
 };

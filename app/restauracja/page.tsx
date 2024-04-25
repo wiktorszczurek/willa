@@ -159,10 +159,10 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <MenuHeader menuHeader={menuHeader} />
       <div id="MenuLink">
-        <MenuGallery menuImages={menuImages} /> {}
+        <MenuHeader menuHeader={menuHeader} />
       </div>
+      <MenuGallery menuImages={menuImages} /> {}
       <HeaderText color="customYellow" text="RESTAURACJA WILLA POPRAD" />
       <ImageGallery menuImages={galleryImages} /> {}
       <Reservation />

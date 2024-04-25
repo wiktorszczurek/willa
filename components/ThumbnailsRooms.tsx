@@ -1,10 +1,10 @@
 "use client";
 
-// ThumbnailsRooms component (React component with typescript)
-
 import React, { useEffect, useRef, useState } from "react";
-import ModalRooms from "@/components/ModalRooms"; // Ensure the path is correct based on your project structure
+import ModalRooms from "@/components/ModalRooms";
+import Image from "next/image"; // Ensure Image is imported
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 interface Feature {
   icon: IconDefinition;
   text: string;
@@ -17,18 +17,19 @@ interface Thumbnail {
   caption: string;
   text: string;
   features: Feature[];
-  descriptions?: string[]; // Assuming descriptions can be optional
+  descriptions?: string[];
 }
 
 interface ModalRoomsProps {
   isOpen: boolean;
   onClose: () => void;
-  label: string | undefined; // This means label can be string or undefined
-  img: string | undefined; // This means img can be string or undefined
-  text: string | undefined; // This means text can be string or undefined
+  label: string | undefined;
+  img: string | undefined;
+  text: string | undefined;
   features: Feature[] | undefined;
   descriptions: string[] | undefined;
 }
+
 interface ThumbnailsRoomsProps {
   thumbnails: Thumbnail[];
 }
@@ -98,22 +99,15 @@ const ThumbnailsRooms: React.FC<ThumbnailsRoomsProps> = ({ thumbnails }) => {
             borderRadius: "9px",
           }}
         >
-          <img
-            src={thumbnail.img}
-            alt={thumbnail.label}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              position: "absolute",
-              borderRadius: "9px",
-              transition: "transform 0.6s ease",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.2)")
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          />
+          <div style={{ position: "absolute", width: "100%", height: "100%" }}>
+            <Image
+              src={thumbnail.img}
+              alt={thumbnail.label}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 hover:scale-120"
+            />
+          </div>
           <div
             className="thumbnail-overlay"
             style={{
