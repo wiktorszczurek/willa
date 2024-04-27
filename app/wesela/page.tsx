@@ -15,7 +15,6 @@ import { FaClipboardList } from "react-icons/fa";
 const images = [
   "/img-wesela/Carousel1.jpg",
   "/img-wesela/Carousel2.jpg",
-  "/img-wesela/Carousel5.jpg",
 
   "/img-wesela/Carousel3.jpg",
   "/img-wesela/Carousel4.jpg",

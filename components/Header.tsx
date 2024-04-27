@@ -11,7 +11,7 @@ export function HeaderTest() {
     {
       text: "Menu",
       className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
-      href: "/restauracja#MenuLink",
+      href: "/restauracja#Menu",
     },
     {
       text: "Pokoje",
@@ -146,7 +146,7 @@ export function HeaderTest() {
           </div>
           <div className="mt-auto">
             <p className="my-4 text-xs text-center text-gray-400">
-              <span>Copyright © 2021</span>
+              <span>© {new Date().getFullYear()} Willa Poprad</span>
             </p>
           </div>
         </nav>

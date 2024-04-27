@@ -10,15 +10,14 @@ import MenuHeader from "@/components/MenuHeader";
 import Photo from "@/components/Photo";
 
 const images = [
-  "/img-carousel/Carousel2.jpg",
-  "/img-carousel/Carousel4.jpg",
+  ".img-carousel.Carousel2.jpg",
+  ".img-carousel.Carousel4.jpg",
 
-  "/img-carousel/Carousel6.jpg",
-  "/img-carousel/Carousel3.jpg",
-  "/img-carousel/Carousel5.jpg",
-  "/img-carousel/Carousel8.png",
-
-  "/img-carousel/Carousel9.jpg",
+  ".img-carousel.Carousel6.jpg",
+  ".img-carousel.Carousel3.jpg",
+  ".img-carousel.Carousel5.jpg",
+  ".img-carousel.Carousel8.jpg",
+  ".img-carousel.Carousel12.jpg",
 ];
 
 const thumbnails = [

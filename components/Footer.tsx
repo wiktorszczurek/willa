@@ -47,19 +47,54 @@ function Footer() {
             </div>
             {/* middle div */}
             <div className="flex flex-col items-center gap-4 relative">
-              <p className="text-2xl font-semibold footer-main">Dowiedz się więcej</p>              
-              <a className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105" href="/restauracja">Restauracja</a>
-              <a className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105" href="/restauracja">Wesele</a>
-              <a className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105" href="/restauracja">Pokoje</a>
-              <a className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105" href="/restauracja">Klub</a>
-              <a className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105" href="/restauracja">Menu</a>
-              
+              <p className="text-2xl font-semibold footer-main">
+                Dowiedz się więcej
+              </p>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/"
+              >
+                Strona Główna
+              </a>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/wesela"
+              >
+                Wesela
+              </a>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/klub"
+              >
+                Klub
+              </a>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/restauracja"
+              >
+                Restauracja
+              </a>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/restauracja#Menu"
+              >
+                Menu
+              </a>
+              <a
+                className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
+                href="/pokoje"
+              >
+                Pokoje
+              </a>
+
               <FormDrawer />
             </div>
 
             {/* right side */}
             <div className="flex flex-col items-center md:p-0 py-4 gap-4">
-              <p className="text-2xl font-semibold mb-2">Obserwuj Willę Poprad</p>
+              <p className="text-2xl font-semibold mb-2">
+                Obserwuj Willę Poprad
+              </p>
               <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
                 {iconsTab.map(({ icon, href }, index) => {
                   return (
@@ -77,7 +112,10 @@ function Footer() {
               </div>
               <p className="text-[16px] font-medium text-white mt-2">
                 © {new Date().getFullYear()} Willa Poprad <br /> Design by{" "}
-                <a target="_blank" href="https://www.linkedin.com/in/eryktomaszek/">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/eryktomaszek/"
+                >
                   Eryk
                 </a>
                 <span> & </span>
@@ -90,7 +128,6 @@ function Footer() {
         </div>
       </footer>
     </div>
-    
   );
 }
 

@@ -18,7 +18,6 @@ const images = [
   "/img-restauracja/Carousel1.jpg",
   "/img-restauracja/Carousel4.jpg",
   "/img-restauracja/Carousel2.jpg",
-
   "/img-restauracja/Carousel3.jpg",
 ];
 
@@ -102,6 +101,10 @@ const galleryImages = [
   { img: "/img-restauracja/RestauracjaGaleria16.jpg", title: "" },
 
   { img: "/img-restauracja/RestauracjaGaleria17.jpg", title: "" },
+
+  { img: "/img-restauracja/RestauracjaGaleria18.jpg", title: "" },
+
+  { img: "/img-restauracja/RestauracjaGaleria19.jpg", title: "" },
 ];
 
 const menuImages = [
@@ -159,7 +162,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div id="MenuLink">
+      <div id="Menu">
         <MenuHeader menuHeader={menuHeader} />
       </div>
       <MenuGallery menuImages={menuImages} /> {}

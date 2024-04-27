@@ -1,84 +1,88 @@
 "use client";
+
 import React, { useState } from "react";
+import ImageGalleryModalMenu from "@/components/ImageGalleryModalMenu";
 import Image from "next/image";
-import MenuModal from "@/components/MenuModal";
 
 interface MenuImage {
-  img: string;
   title: string;
+  img: string;
 }
 
-interface MenuGalleryProps {
+interface ImageGalleryProps {
   menuImages: MenuImage[];
 }
 
-const MenuGallery: React.FC<MenuGalleryProps> = ({ menuImages }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ menuImages }) => {
   const [selectedMenuImageIndex, setSelectedMenuImageIndex] = useState<
     number | null
   >(null);
 
-  if (!menuImages.length) {
-    console.log("No images to display.");
-    return null;
-  }
-
-  const openModal = () => {
-    setSelectedMenuImageIndex(0);
+  const openModal = (index: number) => {
+    setSelectedMenuImageIndex(index);
   };
 
   const closeModal = () => {
     setSelectedMenuImageIndex(null);
   };
 
-  const selectImage = (index: number) => {
-    setSelectedMenuImageIndex(index);
-  };
-
   const goToNextImage = () => {
-    setSelectedMenuImageIndex((prevIndex) =>
-      prevIndex !== null ? (prevIndex + 1) % menuImages.length : null
-    );
+    if (selectedMenuImageIndex !== null) {
+      setSelectedMenuImageIndex(
+        (selectedMenuImageIndex + 1) % menuImages.length
+      );
+    }
   };
 
   const goToPreviousImage = () => {
-    setSelectedMenuImageIndex((prevIndex) =>
-      prevIndex !== null
-        ? (prevIndex - 1 + menuImages.length) % menuImages.length
-        : null
-    );
+    if (selectedMenuImageIndex !== null) {
+      setSelectedMenuImageIndex(
+        selectedMenuImageIndex - 1 < 0
+          ? menuImages.length - 1
+          : selectedMenuImageIndex - 1
+      );
+    }
   };
 
   return (
-    <div className="flex justify-center flex-wrap gap-5 p-4">
-      <div
-        className="w-1/1 sm:w-1/1 md:w-1/1 lg:w-1/1 xl:w-1/3 p-1 cursor-pointer relative"
-        onClick={openModal}
-      >
-        <div className="w-full h-auto relative border border-gray-100 rounded-lg overflow-hidden">
-          {menuImages[0] ? (
+    <div className="flex justify-center flex-wrap gap-5 ">
+      {menuImages.slice(0, 1).map((item, index) => (
+        <div
+          key={index}
+          className="relative w-full p-1 cursor-pointer"
+          onClick={() => openModal(index)}
+          style={{
+            height: "750px",
+            overflow: "hidden",
+            fontFamily: "Josefin, sans-serif",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <div className="relative">
             <Image
-              src={menuImages[0].img}
-              alt={menuImages[0].title}
-              layout="fill"
-              objectFit="cover"
-              unoptimized={true}
-              className="transition-transform duration-300 hover:scale-101 opacity-80"
+              src={item.img}
+              alt={item.title}
+              width={300}
+              height={300}
+              className="transition-transform duration-300 hover:scale-101 w-full h-full object-cover border border-gray-100"
             />
-          ) : (
-            <p>No image found at index 0.</p>
-          )}
-        </div>
-        <div className="absolute inset-0 flex justify-center items-center">
-          <div className="bg-customYellow p-2 rounded-lg">
-            <p className="text-white text-3xl font-josefin text-center"></p>
+            <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-0">
+              <p className="text-white text-lg font-bold bg-customYellow p-5 opacity-90 rounded-lg">
+                Kliknij, aby zobaczyć pełne menu
+              </p>
+            </div>
           </div>
+          <p className="text-white text-lg font-bold ">{item.title}</p>
         </div>
-      </div>
+      ))}
       {selectedMenuImageIndex !== null && (
-        <MenuModal
-          image={menuImages[selectedMenuImageIndex].img}
-          images={menuImages.map((item) => item.img)}
-          onImageSelect={selectImage}
+        <ImageGalleryModalMenu
+          isOpen={selectedMenuImageIndex !== null}
+          images={menuImages}
+          selectedIndex={selectedMenuImageIndex}
           onClose={closeModal}
           onNext={goToNextImage}
           onPrevious={goToPreviousImage}
@@ -88,4 +92,4 @@ const MenuGallery: React.FC<MenuGalleryProps> = ({ menuImages }) => {
   );
 };
 
-export default MenuGallery;
+export default ImageGallery;
