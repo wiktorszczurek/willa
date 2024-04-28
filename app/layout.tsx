@@ -61,6 +61,7 @@ export default function RootLayout({
         <Header />
         <ScrollTopArrow />
         {children}
+        <div className="border-t-2 border-customYellow m-5"></div>
         <HeaderText color="customYellow" text="Sprawdź naszego Instagrama" />
 
         <InstagramPost posts={posts} />
