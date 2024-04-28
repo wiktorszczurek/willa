@@ -1,23 +1,23 @@
 import React from "react";
 import Carousel from "@/components/Carousel";
+import InstagramPost from "@/components/InstagramPost";
+
 import ThumbnailLinks from "@/components/ThumbnailMainPage";
 const ScrollButton = dynamic(() => import("@/components/ScrollButton"), {
   ssr: false,
 });
 import dynamic from "next/dynamic";
-import MenuGallery from "@/components/MenuGallery";
-import MenuHeader from "@/components/MenuHeader";
+
 import Photo from "@/components/Photo";
+import HeaderText from "@/components/HeaderText";
 
 const images = [
-  ".img-carousel.Carousel2.jpg",
-  ".img-carousel.Carousel4.jpg",
-
-  ".img-carousel.Carousel6.jpg",
-  ".img-carousel.Carousel3.jpg",
-  ".img-carousel.Carousel5.jpg",
-  ".img-carousel.Carousel8.jpg",
-  ".img-carousel.Carousel12.jpg",
+  "/img-carousel/Carousel2.jpg",
+  "/img-carousel/Carousel1.jpg",
+  "/img-carousel/Carousel4.jpg",
+  "/img-carousel/Carousel5.jpg",
+  "/img-carousel/Carousel8.jpg",
+  "/img-carousel/Carousel7.jpg",
 ];
 
 const thumbnails = [
@@ -69,10 +69,7 @@ const Page = () => {
       <div id="thumbnailLinks">
         <ThumbnailLinks thumbnails={thumbnails} />
       </div>
-      <Photo
-        src="/mainpic.jpg" // Background image source
-        captionSrc="/caption2.png" // Caption image source
-      />{" "}
+      <Photo src="/mainpic.jpg" captionSrc="/caption2.png" />{" "}
     </div>
   );
 };

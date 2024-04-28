@@ -5,6 +5,8 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTopArrow from "@/components/ScrollTopArrow";
+import InstagramPost from "@/components/InstagramPost";
+import HeaderText from "@/components/HeaderText";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,6 +18,31 @@ import {
 } from "react-router-dom";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const posts = [
+  {
+    image: { src: "/IG/mainpage/IG8.jpg", alt: "1" },
+    caption: "Czy istnieje lepszy niedzielny obiad? 🤤🍽️",
+    href: "https://www.instagram.com/p/C5vMZ_ZsgO8/",
+  },
+  {
+    image: { src: "/IG/mainpage/IG6.jpg", alt: "2" },
+    caption: "Takie imprezy moglibyśmy organizować co tydzień 🥰🥳",
+    href: "https://www.instagram.com/p/CuVCkzAMjz6/",
+  },
+  {
+    image: { src: "/IG/mainpage/IG3.jpg", alt: "3" },
+    caption:
+      "Piątkowy wieczór 🎉😋 bez naszego 𝐧𝐨𝐰𝐞𝐠𝐨 𝐦𝐞𝐧𝐮 to jak taniec bez muzyki 🤪 ",
+    href: "https://www.instagram.com/p/C5YEj0MMm5-/",
+  },
+  {
+    image: { src: "/IG/mainpage/IG4.jpg", alt: "4" },
+    caption:
+      "Nasze 𝐀𝐬𝐬𝐢𝐞𝐭𝐭𝐞 z jabłka to połączenie tradycji z nowoczesnością, gdzie każdy kęs to uczta dla zmysłów 🍏 ",
+    href: "https://www.instagram.com/p/C3vHlOEMSPb/",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Willa Poprad",
@@ -34,6 +61,9 @@ export default function RootLayout({
         <Header />
         <ScrollTopArrow />
         {children}
+        <HeaderText color="customYellow" text="Sprawdź naszego Instagrama" />
+
+        <InstagramPost posts={posts} />
         <Footer />
       </body>
     </html>

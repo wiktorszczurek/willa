@@ -17,8 +17,7 @@ const Reservation = () => {
 
         <a href="tel:+48501513400">18 440 02 11</a>
       </div>
-      <div className="text-2xl mt-7">Skontaktuj się z nami!</div>
-      <div className="border-t-2 border-customYellow m-5"></div>
+
       <div className="flex justify-center items-center space-x-4 mb-2 group transform transition-transform duration-300 hover:scale-105">
         <FaClipboardList style={{ marginBottom: "0.3rem" }} color={iconColor} />
 
