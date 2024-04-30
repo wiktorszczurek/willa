@@ -203,6 +203,9 @@
     padding-right: 0;
   }
 }
+.menu {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   :root {

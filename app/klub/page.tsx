@@ -24,14 +24,10 @@ const thumbnails = [
     img: "/img-klub/PrzyjeciaWeselne.jpg",
     label: "PRZYJĘCIA WESELNE",
 
-    caption: `Tradycyjny pakiet weselny oferuje bogate menu z zupą,
-    wieloporcjowym daniem głównym, przekąskami, sałatkami,
-    ciastami, owocami oraz trzema gorącymi daniami
-    serwowanymi w trakcie wieczoru, bufetem staropolskim,
-    nieograniczoną ilością napojów, tortem weselnym oraz
-    słodkim poczęstunkiem dla połowy gości. To kompleksowa
-    propozycja, która zapewnia wyjątkową oprawę kulinarą i
-    elegancką atmosferę przyjęcia.
+    caption: `Elegancka i magiczna atmosfera Klubu 
+    stanowi wyjątkowe tło dla ślubnych celebracji w gronie najbliższych.  
+    Przestrzeń klubu można zaaranżować w różnorodny sposób, ustawiając okrągłe
+     lub prostokątne stoły. Istnieje możliwość wydzielenia przestrzeni dla DJa i parkietu do zabaw. Ponadto klub wyposażony jest w bar.
     `,
   },
 
@@ -39,34 +35,25 @@ const thumbnails = [
     img: "/img-klub/ImprezyOkolicznosciowe.jpg",
     label: "IMPREZY OKOLICZNOŚCIOWE",
 
-    caption: `Pakiet weselny klasyczny łączy w sobie elegancję i
-    różnorodność kulinarną, obejmując przystawkę, zupę,
-    wieloporcjowe danie główne z dodatkami, a także wino białe
-    i czerwone do obiadu. Uzupełnieniem oferty są przekąski,
-    sałatki, ciasta, owoce, trzy dodatkowe dania gorące
-    wieczorem, wybór z trzech bufetów, nieograniczone napoje
-    oraz tort i słodki poczęstunek dla połowy gości, zapewniając
-    kompleksowe doświadczenie kulinarne.
+    caption: `Klub Rytro Retro jest inspirowany stylem dwudziestolecia międzywojennego salonu towarzyskiego. 
+    Elegancka i magiczna przestrzeń jest idealna do celebrowania mniejszych imprez okolicznościowych jak urodziny czy imieniny do 40 osób. 
     `,
   },
   {
     img: "/img-klub/Konferencje.jpg",
     label: "KONFERENCJE",
 
-    caption: `Pakiet weselny premium oferuje wyjątkową ucztę kulinarą z przystawką, zupą, wieloporcjowym daniem głównym, wyselekcjonowanymi winami, a także bogatym wyborem
-    bufetów: sushi, słonych mono-porcji, staropolskim, gorącym, oraz słodkim z fontanną czekoladową lub barem prosecco. Uzupełnia go nieograniczony wybór napojów, tort weselny oraz słodki poczęstunek dla wybranych gości, gwarantując niezapomniane wrażenia smakowe i elegancję na
-    najwyższym poziomie.
+    caption: `Klub oferuje elastyczne układy przestrzenne, umożliwiając rozmieszczenie prostokątnych lub okrągłych stołów, a także wygodnych loży, 
+    które sprzyjają networkingowi i rozmowom. 
+    Ponadto istnieje możliwość wynajęcia projektora i ekranu, co ułatwia prezentacje i wystąpienia.
     `,
   },
   {
     img: "/img-klub/Szkolenia.jpg",
     label: "SZKOLENIA",
 
-    caption: `Poprawiny to wyjątkowa oferta obejmująca pełen zakres dań: od zupy, przez danie główne z dodatkami i deser, aż po bogaty wybór na bufetach z ciastami, zimnymi przekąskami
-    i sałatkami. W ofercie znajduje się również danie gorące
-    serwowane oraz danie jednogarnkowe w bufecie, dopełnione
-    szeroką gamą napojów zimnych i gorących, co zapewnia
-    kontynuację uczty weselnej w przyjemnej, swobodnej atmosferze.`,
+    caption: `Sala klubowa wyposażona jest w niezależne wejście, osobne toalety, sprzęt multimedialny, dostęp do internetu i idealnie nadaje się na spotkania biznesowe lub szkolenia dla firm. 
+    Układ stołów oraz krzeseł dopasowywany do potrzeb. Podczas szkoleń zapewniamy stół kawowy z przekąskami oraz ciepłe dania.`,
   },
 ];
 

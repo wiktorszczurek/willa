@@ -11,7 +11,7 @@ export function HeaderTest() {
     {
       text: "Menu",
       className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
-      href: "/restauracja#Menu",
+      href: "/menu",
     },
     {
       text: "Pokoje",
