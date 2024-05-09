@@ -55,8 +55,8 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
       >
         <button
           onClick={onClose}
-          className="absolute top-0 right-3 text-7xl bg-transparent border-none font-extralight"
-          style={{ top: "-15px" }}
+          className="absolute top-3 right-3 text-6xl bg-transparent border-none font-extralight"
+          style={{ top: "-5px" }}
         >
           &times;
         </button>
@@ -66,7 +66,6 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
           </h2>
         )}
         <div className="flex justify-center my-2">
-          {/* Replace <img> with <Image> */}
           <Image
             src={img}
             alt={label ?? ""}
@@ -93,7 +92,7 @@ const ModalRooms: React.FC<ModalRoomsProps> = ({
               key={index}
               className="feature-icon flex flex-col items-center text-center"
               style={{
-                animation: `fadeInUp 1s ease forwards ${index * 350}ms`,
+                animation: `fadeInUp 0.5s ease forwards ${index * 350}ms`,
                 width: "calc(33.333% - 1rem)",
               }}
             >

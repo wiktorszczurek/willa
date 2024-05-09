@@ -1,6 +1,5 @@
 import React from "react";
 import Carousel from "@/components/Carousel";
-import InstagramPost from "@/components/InstagramPost";
 
 import ThumbnailLinks from "@/components/ThumbnailMainPage";
 const ScrollButton = dynamic(() => import("@/components/ScrollButton"), {
@@ -9,7 +8,6 @@ const ScrollButton = dynamic(() => import("@/components/ScrollButton"), {
 import dynamic from "next/dynamic";
 
 import Photo from "@/components/Photo";
-import HeaderText from "@/components/HeaderText";
 
 const images = [
   "/img-carousel/Carousel2.jpg",
@@ -51,7 +49,6 @@ const thumbnails = [
   },
 ];
 
-const menuHeader = [{ img: "/img-menu/NapisMenu2.png" }];
 
 const Page = () => {
   return (

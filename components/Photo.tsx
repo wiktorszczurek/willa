@@ -19,6 +19,7 @@ const Photo: React.FC<PhotoProps> = ({ src, captionSrc }) => {
         position: "relative",
         marginTop: "20px",
         marginBottom: "20px",
+        overflow: "hidden", 
       }}
     >
       {/* Background image */}
@@ -36,7 +37,16 @@ const Photo: React.FC<PhotoProps> = ({ src, captionSrc }) => {
           backgroundSize: "cover",
           zIndex: -1,
         }}
+        className="background"
       />
+      {/* Media query for mobile devices */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .background {
+            background-attachment: scroll; // Change to scroll on mobile devices
+          }
+        }
+      `}</style>
       {/* Darkening overlay */}
       <div
         style={{

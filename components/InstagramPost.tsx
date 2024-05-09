@@ -19,7 +19,7 @@ const InstagramPost = ({ posts }) => {
             href={post.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-white rounded-lg shadow-lg overflow-hidden"
+            className="block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
             style={{ minWidth: "300px", width: "100%" }}
           >
             <div className="flex justify-between items-center p-2 bg-white">

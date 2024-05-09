@@ -76,7 +76,7 @@ function Footer() {
               </a>
               <a
                 className="text-base hover:text-gray-100 text-white transition duration-300 hover:scale-105"
-                href="/restauracja#Menu"
+                href="/menu"
               >
                 Menu
               </a>

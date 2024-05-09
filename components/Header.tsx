@@ -10,17 +10,17 @@ export function HeaderTest() {
   const navigationItems2 = [
     {
       text: "Menu",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/menu",
     },
     {
       text: "Pokoje",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/pokoje",
     },
     {
       text: "Kontakt",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/kontakt",
     },
   ];
@@ -28,55 +28,44 @@ export function HeaderTest() {
   const navigationItems1 = [
     {
       text: "Wesela",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/wesela",
     },
     {
       text: "Klub",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/klub",
     },
     {
       text: "Restauracja",
-      className: "text-base text-stone-900 hover:text-stone-950 font-semibold",
+      className: "text-base text-stone-900 hover:text-customBlue duration-500 font-semibold",
       href: "/restauracja",
     },
   ];
-
   const handleMenuToggle = () => {
     setIsMenuHidden((prev) => !prev);
   };
 
   useEffect(() => {
-    // Add event listeners
     const backdrop = document.querySelectorAll(".navbar-backdrop");
-
-    backdrop.forEach((item) =>
-      item.addEventListener("click", handleMenuToggle)
-    );
-
-    // Clean up event listeners on component unmount
+    backdrop.forEach((item) => item.addEventListener("click", handleMenuToggle));
     return () => {
-      backdrop.forEach((item) =>
-        item.removeEventListener("click", handleMenuToggle)
-      );
+      backdrop.forEach((item) => item.removeEventListener("click", handleMenuToggle));
     };
   }, []);
 
   return (
     <div className="font-josefin">
-      <nav className="relative px-4 py-4 flex justify-between items-center align-items-center bg-white lg:mt-12 lg:mb-12">
-        <div className="lg:hidden m-2">
+      <nav className="relative px-4 py-2 flex flex-col justify-between items-center bg-white lg:mt-12 lg:mb-12">
+        <div className="flex justify-between items-center w-full lg:hidden">
           <Logo />
-        </div>
-        <div className="lg:hidden">
-          <button
-            className="flex items-center text-customBlue p-3"
-            onClick={handleMenuToggle}
-          >
+          <button className="text-customBlue p-3" onClick={handleMenuToggle}>
             <AiOutlineMenu size={30} />
           </button>
         </div>
+        <p className="text-sm text-center pt-2 text-gray-600 lg:hidden">
+          Restauracja · Wesela · Klub · Pokoje
+        </p>
         <ul
           className={`hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6 gap-4`}
         >

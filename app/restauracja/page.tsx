@@ -5,14 +5,11 @@ const ScrollButton = dynamic(() => import("@/components/ScrollButton"), {
   ssr: false,
 });
 import dynamic from "next/dynamic";
-import IconThumbnail from "@/components/IconThumbnail";
 import ImageGallery from "@/components/ImageGallery";
 import HeaderText from "@/components/HeaderText";
-import ContactSection from "@/components/ContactSection";
 import TripleSection from "@/components/TripleSection";
 import Reservation from "@/components/Reservation";
-import MenuGallery from "@/components/MenuGallery";
-import MenuHeader from "@/components/MenuHeader";
+import RestaurantMenuLink from "@/components/RestaurantMenuLink";
 
 const images = [
   "/img-restauracja/Carousel1.jpg",
@@ -107,26 +104,6 @@ const galleryImages = [
   { img: "/img-restauracja/RestauracjaGaleria19.jpg", title: "" },
 ];
 
-const menuImages = [
-  { img: "/img-menu/3.png", title: "" },
-
-  { img: "/img-menu/4.png", title: "" },
-
-  { img: "/img-menu/5.png", title: "" },
-
-  { img: "/img-menu/6.png", title: "" },
-
-  { img: "/img-menu/7.png", title: "" },
-
-  { img: "/img-menu/8.png", title: "" },
-
-  { img: "/img-menu/9.png", title: "" },
-
-  { img: "/img-menu/10.png", title: "" },
-
-  { img: "/img-menu/11.png", title: "" },
-];
-const menuHeader = [{ img: "/img-menu/NapisMenu2.png" }];
 const Page = () => {
   return (
     <div
@@ -162,10 +139,11 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div id="Menu">
-        <MenuHeader menuHeader={menuHeader} />
-      </div>
-      <MenuGallery menuImages={menuImages} /> {}
+      <RestaurantMenuLink
+        imageUrl="/img-restauracja/Menu.jpg"
+        linkUrl="/menu"
+        overlayImageUrl="/img-menu/NapisMenu3.png"
+      />
       <HeaderText color="customYellow" text="RESTAURACJA WILLA POPRAD" />
       <ImageGallery menuImages={galleryImages} /> {}
       <Reservation />
